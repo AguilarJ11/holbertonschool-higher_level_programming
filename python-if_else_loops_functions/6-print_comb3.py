@@ -7,6 +7,6 @@ for n in range(1, 100):
     elif int(str(n)[0]) > int(str(n)[-1]) and n > 9:
         continue
     elif n == 89:
-        print(f"{n:02d}", end='\n')
+        print("{:02d}".format(n), end='\n')
     else:
-        print(f"{n:02d}", end=', ')
+        print("{:02d}".format(n), end=', ')
