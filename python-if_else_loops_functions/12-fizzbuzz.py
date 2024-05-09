@@ -7,4 +7,6 @@ def fizzbuzz():
             print("Buzz", end=' ')
         elif i % 3 and i % 5:
             print("FizzBuzz", end=' ')
+        else:
+            print(i, end='')
     print("Buzz")
