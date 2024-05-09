@@ -7,5 +7,5 @@ if __name__ == "__main__":
         print("{}: {}".format(arg, argv[1]))
     else:
         print("{} arguments:".format(arg))
-        for i in range(1, arg):
+        for i in range(1, arg + 1):
             print("{}: {}".format(i, argv[i]))
