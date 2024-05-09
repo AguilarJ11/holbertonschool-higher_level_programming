@@ -6,6 +6,6 @@ if __name__ == "__main__":
     arg = len(argv)
     total = 0
     if arg > 0:
-        for i in range(1, arg + 1):
-            total += int(argv[i])
+        for i in argv[1:]:
+            total += int(i)
 print("{}".format(total))
