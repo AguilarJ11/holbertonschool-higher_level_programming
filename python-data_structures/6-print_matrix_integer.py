@@ -2,4 +2,5 @@
 
 def print_matrix_integer(matrix=[[]]):
     for i in matrix:
-        print("{:d} ".format(i))
+        for i2 in i
+        print("{:d} ".format(i2))
