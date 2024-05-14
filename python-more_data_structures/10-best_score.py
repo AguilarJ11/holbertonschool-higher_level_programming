@@ -2,7 +2,9 @@
 
 def best_score(a_dictionary):
     best = ""
+    score = 0
     for i in a_dictionary:
-        if best < a_dictionary.get(i):
+        if score < a_dictionary.get(i):
+            score = a_dictionary.get(i)
             best = i
     return best
