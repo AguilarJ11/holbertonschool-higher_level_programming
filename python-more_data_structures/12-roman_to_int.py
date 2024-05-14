@@ -12,9 +12,9 @@ def roman_to_int(roman_string):
         num = roman_numbers[c]
         if num_ant == 0:
             result += num
-        elif num <= num_ant:
+        elif num >= num_ant:
             result += num
-        elif num > num_ant:
-            result -= num_ant
+        elif num < num_ant:
+            result -= num
         num_ant = num
     return result
