@@ -15,6 +15,6 @@ def roman_to_int(roman_string):
         elif num > num_ant:
             result += num
         else:
-            result -= num * 2
+            result -= num_ant
         num_ant = num
     return result
