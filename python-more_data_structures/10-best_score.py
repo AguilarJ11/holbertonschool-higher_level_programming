@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def best_score(a_dictionary):
-    if len(a_dictionary) == 0:
+    if len(a_dictionary) == 0 and a_dictionary[0] == None:
         return None
     best = ""
     score = 0
