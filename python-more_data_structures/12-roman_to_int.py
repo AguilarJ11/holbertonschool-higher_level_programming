@@ -3,10 +3,16 @@
 def roman_to_int(roman_string):
     roman_numbers = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100,
                      'D': 500}
-    suma = 0
-    for i in roman_string:
-        i2 = 0
-        for i2 in roman_numbers:
-            if i == i2:
-                suma += roman_numbers.get(i2)
-    return suma
+    if not isinstance(roman_string, str):
+        return None
+    result = 0
+    num = 0
+    num_ant = 0
+    for c in roman_string:
+        num = roman_numbers[c]
+        if num > num_ant:
+            result += num
+        elif num < num_ant:
+            result -= num
+        num_ant = num
+    return result
