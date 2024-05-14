@@ -13,8 +13,8 @@ def roman_to_int(roman_string):
         if num_ant == 0:
             result += num
         elif num > num_ant:
-            result -= num_ant
-        else:
             result += num
+        else:
+            result -= num
         num_ant = num
     return result
