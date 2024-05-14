@@ -2,13 +2,8 @@
 
 def uniq_add(my_list=[]):
     suma = 0
-    new_list = my_list[:]
-    for i in new_list:
-        if len(new_list) == 1:
-            return new_list[0]
-        if new_list.count(i) > 1:
-            new_list.remove(i)
-    for i in new_list:
-        if new_list.count(i) == 1:
-            suma += i
-    return suma
+    new_list = []
+    for i in my_list:
+        if i not in new_list:
+            new_list.append(i)
+    return sum(new_list)
