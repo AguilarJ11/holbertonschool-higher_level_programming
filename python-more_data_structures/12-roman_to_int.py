@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
     result = 0
     num = 0
     num_ant = 0
-    for c in reverse(roman_string):
+    for c in reversed(roman_string):
         num = roman_numbers[c]
         if num_ant == 0:
             result += num
