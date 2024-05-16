@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-e: def safe_print_division(a, b):
+def safe_print_division(a, b):
     result = 0
     try:
         resutl = a / b
