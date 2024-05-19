@@ -12,6 +12,8 @@ Methods:
     area(self): Calculates the area of the square.
     my_print(self): Prints the square with '#' characters.
 """
+
+
 class Square:
     """
     A class named Square.
@@ -21,11 +23,11 @@ class Square:
         Initializes a new Square instance.
 
         Args:
-            size (int, optional): The size of the square. Defaults to 0.
-            position (tuple, optional): The position of the square. Defaults to (0, 0).
+            size (int, optional): The size of the square.
+            position (tuple, optional): The position of the square.
 
         Raises:
-            TypeError: If size is not an integer or if position is not a tuple of 2 positive integers.
+            TypeError: If position is not a tuple of 2 positive integers.
             ValueError: If size is less than 0.
         """
         self.__size = size

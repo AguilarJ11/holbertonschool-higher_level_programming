@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-    """
-    Square:
-        Square
-    
-    """
+"""
+Square:
+    Square
+"""
+
+
 class Square:
     """
     A class named Square.

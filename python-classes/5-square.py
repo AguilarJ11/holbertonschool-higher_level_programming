@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-    """
-    Square:
-        Square
-    
-    """
+"""
+Square:
+    Square
+"""
+
+
 class Square:
     """
     A class named Square.
@@ -13,7 +14,7 @@ class Square:
         Initialize the square with a size.
 
         Args:
-            size (int, optional): The size of the square. Defaults to 0.
+            size (int, optional): The size of the square.
 
         Raises:
             TypeError: If size is not an integer.
