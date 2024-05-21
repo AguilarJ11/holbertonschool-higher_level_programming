@@ -30,7 +30,7 @@ def text_indentation(text):
             print(c, end="")
             print()
             last_space = True
-        elif last_space is True:
+        elif last_space is True and c == ' ':
             last_space = False
             print()
             continue
