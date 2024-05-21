@@ -29,9 +29,10 @@ def text_indentation(text):
         if c in {'.', ':', '?'}:
             print(c)
             print()
+            print()
             last_space = True
         elif last_space is True and c == ' ':
-            last_space = False
             continue
         else:
             print(c, end="")
+            last_space = False
