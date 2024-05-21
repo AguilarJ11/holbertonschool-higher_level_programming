@@ -22,9 +22,9 @@ def text_indentation(text):
 
         I'm fine.
     """
-    last_space = False
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    last_space = False
     for c in text:
         if c in {'.', ':', '?'}:
             print(c)
@@ -34,4 +34,4 @@ def text_indentation(text):
             continue
         else:
             print(c, end="")
-            last_space = False
+        last_space = False
