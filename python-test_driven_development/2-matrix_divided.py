@@ -24,7 +24,9 @@ def matrix_divided(matrix, div):
                        rounded to 2 decimal places.
     """
     row_length = 0
-
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix (list of lists) \
+of integers/floats")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     elif not (isinstance(div, int) or isinstance(div, float)):
