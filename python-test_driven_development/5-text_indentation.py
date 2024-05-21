@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Print text with two new lines after each '.', ':', and '?' character.
+"""
+
 
 def text_indentation(text):
     """
@@ -26,7 +30,7 @@ def text_indentation(text):
             print(c)
             print()
             last_space = True
-        elif last_space == True:
+        elif last_space is True:
             continue
         else:
             print(c, end="")
