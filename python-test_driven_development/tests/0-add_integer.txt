@@ -10,3 +10,7 @@
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+>>> add_integer('inf')
+Traceback (most recent call last):
+    ...
+OverflowError: a too large
