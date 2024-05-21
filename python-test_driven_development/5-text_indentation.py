@@ -22,6 +22,7 @@ def text_indentation(text):
 
         I'm fine.
     """
+    last_space = False
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for c in text:
