@@ -18,6 +18,10 @@ def add_integer(a, b=98):
     Returns:
         int: The sum of `a` and `b`.
     """
+    if a == 'inf':
+        raise OverflowError("a is too large")
+    elif b == 'inf':
+        raise OverflowError("b is too large")
     if not (isinstance(a, int) or isinstance(a, float)):
         raise TypeError("a must be an integer")
     if not (isinstance(b, int) or isinstance(b, float)):

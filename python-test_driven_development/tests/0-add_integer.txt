@@ -13,4 +13,8 @@ TypeError: b must be an integer
 >>> add_integer('inf')
 Traceback (most recent call last):
     ...
-OverflowError: a too large
+OverflowError: a is too large
+>>> add_integer(1, 'inf')
+Traceback (most recent call last):
+    ...
+OverflowError: b is too large
