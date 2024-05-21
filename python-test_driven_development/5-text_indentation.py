@@ -1,16 +1,32 @@
 #!/usr/bin/python3
 
 def text_indentation(text):
+    """
+    Print text with two new lines after each '.', ':', and '?' character.
+
+    Parameters:
+        text (str): The text to be processed.
+
+    Raises:
+        TypeError: If text is not a string.
+
+    Example:
+        >>> text_indentation("Hello. How are you? I'm fine.")
+        Hello.
+
+        How are you?
+
+        I'm fine.
+    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for c in text:
         last_space = False
-        if c == '.' or c == ':' or c == '?':
+        if c in {'.', ':', '?'}:
             print(c)
             print()
-            print()
             last_space = True
-        elif last_space == True :
+        elif last_space == True:
             continue
         else:
             print(c, end="")
