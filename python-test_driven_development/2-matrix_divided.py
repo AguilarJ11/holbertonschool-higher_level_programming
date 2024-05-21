@@ -13,8 +13,9 @@ def matrix_divided(matrix, div):
         div (int or float): The divisor.
 
     Raises:
-        TypeError: If the matrix is not a list of lists containing integers or floats,
-                   or if the divisor is not a number.
+        TypeError: If the matrix is not a list of lists
+        containing integers or floats,
+        or if the divisor is not a number.
         ZeroDivisionError: If the divisor is zero.
         TypeError: If each row of the matrix does not have the same size.
 
@@ -35,6 +36,7 @@ def matrix_divided(matrix, div):
         row_length = len(row)
         for i in row:
             if not (isinstance(i, int) or isinstance(i, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix (list of lists) \
+                                of integers/floats")
 
     return list(map(lambda x: round(x / div, 2), matrix))
