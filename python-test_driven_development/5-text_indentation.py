@@ -25,12 +25,12 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for c in text:
-        last_space = False
         if c in {'.', ':', '?'}:
             print(c)
             print()
             last_space = True
-        elif last_space is True and c == ' ':
+        elif last_space is True:
             continue
         else:
             print(c, end="")
+            last_space = False
