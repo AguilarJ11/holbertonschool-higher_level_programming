@@ -39,4 +39,4 @@ def matrix_divided(matrix, div):
                 raise TypeError("matrix must be a matrix (list of lists) \
                                 of integers/floats")
 
-    return list(map(lambda x: round(x / div, 2), matrix))
+    return [[x / div for x in row] for row in matrix]
