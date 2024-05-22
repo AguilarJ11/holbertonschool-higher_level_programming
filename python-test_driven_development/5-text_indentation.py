@@ -27,8 +27,7 @@ def text_indentation(text):
     last_space = False
     for c in text:
         if c in {'.', ':', '?'}:
-            print(c, end="")
-            print()
+            print(c)
             print()
             last_space = True
         elif last_space is True and c == ' ':
