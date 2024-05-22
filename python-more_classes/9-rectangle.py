@@ -112,7 +112,8 @@ class Rectangle:
         return "" if self.height == 0 or self.width == 0 else rec_print
 
     def __repr__(self):
-        """Return a string representing the instance.
+        """
+        Return a string representing the instance.
 
         Returns:
             str: A string representing the current instance.
@@ -121,7 +122,44 @@ class Rectangle:
 
     def __del__(self):
         """
-        Destructor method.
+        Destructor method. Called when an instance of Rectangle is deleted.
+        Decrements the number_of_instances class attribute.
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Compare two rectangles and return the one with
+        the greater or equal area.
+
+        Args:
+            rect_1 (Rectangle): The first rectangle to compare.
+            rect_2 (Rectangle): The second rectangle to compare.
+
+        Returns:
+            Rectangle: The rectangle with the greater or equal area.
+
+        Raises:
+            TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        return rect_1 if rect_1.area() >= rect_2.area() else rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        Creates a new square Rectangle instance.
+
+        Args:
+            cls (class): The class itself.
+            size (int): The size of the square. Default is 0.
+
+        Returns:
+            Rectangle: A new Rectangle instance with equal width and height.
+        """
+        return cls(size, size)
