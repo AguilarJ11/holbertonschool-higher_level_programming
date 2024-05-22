@@ -114,6 +114,7 @@ class Rectangle:
             str: A string representing the current instance.
         """
         return f"Rectangle({self.width}, {self.height})"
+
     def __del__(self):
         """
         Destructor method.
