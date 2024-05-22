@@ -105,4 +105,4 @@ class Rectangle:
         for t in range(self.height):
             rec_print += '#' * self.width + '\n'
         rec_print = rec_print[:-1]
-        return rec_print
+        return "" if self.height == 0 or self.width == 0 else rec_print
