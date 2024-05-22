@@ -104,4 +104,5 @@ class Rectangle:
         rec_print = ""
         for t in range(self.height):
             rec_print += '#' * self.width + '\n'
+        rec_print = rec_print[:-1]
         return rec_print
