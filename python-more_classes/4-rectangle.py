@@ -113,4 +113,4 @@ class Rectangle:
         Returns:
             str: A string representing the current instance.
         """
-        return f"self.width, self.height"
+        return f"{self.width}, {self.height}"
