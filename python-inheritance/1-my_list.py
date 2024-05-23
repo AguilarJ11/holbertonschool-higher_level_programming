@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+Subclass of a list
+"""
+
+
 class MyList(list):
     """Subclass of list with a method to print its elements sorted.
 
