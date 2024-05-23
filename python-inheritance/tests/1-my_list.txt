@@ -1,3 +1,17 @@
 >>> MyList = __import__('1-my_list').MyList
 
->>>
+>>> l = MyList([])
+>>> l.print_sorted()
+[]
+
+>>> l = MyList([-3, -1, -5, -2])
+>>> l.print_sorted()
+[-5, -3, -2, -1]
+
+>>> l = MyList([3, 1, 5, 2])
+>>> l.print_sorted()
+[1, 2, 3, 5]
+
+>>> l = MyList([1, 2, 3, 4])
+>>> l.print_sorted()
+[1, 2, 3, 4]

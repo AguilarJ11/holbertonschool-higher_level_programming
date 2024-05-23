@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Lookup
+"""
+
+
 def lookup(obj):
     """
     Return the string representation of an object.
