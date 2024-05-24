@@ -46,4 +46,4 @@ class Rectangle(BaseGeometry):
             '[Rectangle] width/height', where 'width' and 'height' are the
             width and height of the rectangle, respectively.
         """
-        return f"[Rectangle] {self.width}/{self.height}"
+        return f"[Rectangle] {self.__width}/{self.__height}"

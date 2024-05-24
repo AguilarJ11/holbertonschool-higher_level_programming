@@ -44,4 +44,4 @@ class Square(Rectangle):
             '[Square] size/size', where 'size' are the
             size of the square, respectively.
         """
-        return f"[Square] {self.size}/{self.size}"
+        return f"[Square] {self.__size}/{self.__size}"
