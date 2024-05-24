@@ -60,7 +60,7 @@ class Circle(Shape):
         Returns:
             float: The area of the circle.
         """
-        return math.pi * self.__radius ** 2
+        return math.pi * (self.__radius ** 2)
 
     def perimeter(self):
         """
