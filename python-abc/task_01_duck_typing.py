@@ -49,8 +49,8 @@ class Circle(Shape):
         """
         if not (isinstance(radius, int) or isinstance(radius, float)):
             raise TypeError("radius must be an integer or float")
-        elif radius <= 0:
-            raise ValueError("radius must be greater than 0")
+        elif radius < 0:
+            raise ValueError("radius must be greater or equal than 0")
         self.__radius = radius
 
     def area(self):
@@ -93,8 +93,8 @@ class Rectangle(Shape):
         if not (isinstance(width, int) or isinstance(width, float)) \
                 or not (isinstance(height, int) or isinstance(height, float)):
             raise TypeError("width and height must be integers or floats")
-        elif width <= 0 or height <= 0:
-            raise ValueError("width and height must be greater than 0")
+        elif width < 0 or height < 0:
+            raise ValueError("width and height must be greater or equal than 0")
         self.__width = width
         self.__height = height
 
