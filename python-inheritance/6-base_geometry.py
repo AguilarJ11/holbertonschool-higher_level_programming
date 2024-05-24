@@ -10,6 +10,5 @@ class BaseGeometry:
     """
     pass
 
-def area(self):
+    def area(self):
         raise ValueError("area() is not implemented")
-    
