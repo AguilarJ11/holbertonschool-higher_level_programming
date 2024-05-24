@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Check if an objetct belongs to a specific class
+Check if an object inherits or is from a specific class
 """
 
 
-def is_same_class(obj, a_class):
+def inherits_from(obj, a_class):
     """
-    Check if an object belongs to a specific class.
+    Check if an object inherits or is from a specific class.
 
     Parameters:
     obj (object): The object to be checked.
@@ -15,4 +15,4 @@ def is_same_class(obj, a_class):
     Returns:
     bool: True if the object belongs to the specified class, False otherwise.
     """
-    return True if type(obj) is a_class else False
+    return True if isinstance(obj, a_class) else False
