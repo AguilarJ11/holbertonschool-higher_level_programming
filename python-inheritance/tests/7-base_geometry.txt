@@ -16,7 +16,7 @@ TypeError: grados must be an integer
 >>> bg.integer_validator("grados", -45)
 Traceback (most recent call last):
 ...
-TypeError: grados must be greater than 0
+ValueError: grados must be greater than 0
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("numero", 10)
