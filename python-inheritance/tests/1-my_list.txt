@@ -17,9 +17,9 @@
 [1, 2, 3, 4]
 
 >>> lali = MyList([])
-lali.append(1)
-lali.append(4)
-lali.append(3)
-lali.append(2)
-my_list.print_sorted()
+>>> lali.append(1)
+>>> lali.append(4)
+>>> lali.append(3)
+>>> lali.append(2)
+>>> my_list.print_sorted()
 [1, 2, 3, 4]

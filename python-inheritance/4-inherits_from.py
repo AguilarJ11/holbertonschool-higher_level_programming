@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Check if an object inherits or is from a specific class
+Check if an object inherits from a specific class
 """
 
 
 def inherits_from(obj, a_class):
     """
-    Check if an object inherits or is from a specific class.
+    Check if an object inherits from a specific class.
 
     Parameters:
     obj (object): The object to be checked.
@@ -15,4 +15,4 @@ def inherits_from(obj, a_class):
     Returns:
     bool: True if the object belongs to the specified class, False otherwise.
     """
-    return True if isinstance(obj, a_class) else False
+    return True if issubclass(type(obj), a_class) else False

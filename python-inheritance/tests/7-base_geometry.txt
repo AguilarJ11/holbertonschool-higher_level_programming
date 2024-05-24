@@ -1,0 +1,16 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("nombre", "Pepe")
+[TypeError] nombre must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("grados", 45.5)
+[TypeError] grados must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("grados", -45)
+[TypeError] grados must be greater than 0
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("numero", 10)
