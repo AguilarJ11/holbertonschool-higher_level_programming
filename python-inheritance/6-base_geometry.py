@@ -11,4 +11,10 @@ class BaseGeometry:
     pass
 
     def area(self):
+        """
+        Abstract method to calculate the area.
+        
+        Raises:
+            ValueError: If the method is not implemented.
+        """
         raise ValueError("area() is not implemented")
