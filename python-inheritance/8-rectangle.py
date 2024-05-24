@@ -14,7 +14,7 @@ class BaseGeometry:
         Abstract method to calculate the area.
 
         Raises:
-            ValueError: If the method is not implemented.
+            Exception: If the method is not implemented.
         """
         raise Exception("area() is not implemented")
 
@@ -25,6 +25,9 @@ class BaseGeometry:
         Args:
             name (str): The name of the value to validate.
             value (int): The value to validate.
+
+        Returns:
+            bool: True if the value is a positive integer, False otherwise.
 
         Raises:
             TypeError: If the value is not an integer.
@@ -37,9 +40,25 @@ class BaseGeometry:
         else:
             return True
 
-class Rectangle(BaseGeomery):
+
+class Rectangle(BaseGeometry):
+    """
+    Rectangle class: represents a rectangle.
+
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
+    """
+
     def __init__(self, width, height):
-        if BaseGeomery.integer_validator("width", width):
+        """
+        Initializes a Rectangle instance with the given width and height.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+        """
+        if BaseGeometry.integer_validator("width", width):
             self.__width = width
-        if BaseGeomery.integer_validator("height", height):    
+        if BaseGeometry.integer_validator("height", height):
             self.__height = height
