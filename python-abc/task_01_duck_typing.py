@@ -47,6 +47,10 @@ class Circle(Shape):
         Parameters:
             radius (float): The radius of the circle.
         """
+        if not (isinstance(radius, int) or isinstance(radius, float)):
+            raise TypeError("radius must be an integer or float")
+        elif radius <= 0:
+            raise ValueError("radius must be greater than 0")
         self.__radius = radius
 
     def area(self):
@@ -86,6 +90,11 @@ class Rectangle(Shape):
             width (float): The width of the rectangle.
             height (float): The height of the rectangle.
         """
+        if not (isinstance(width, int) or isinstance(width, float)) \
+                or not (isinstance(height, int) or isinstance(height, float)):
+            raise TypeError("width and height must be integers or floats")
+        elif width <= 0 or height <= 0:
+            raise ValueError("width and height must be greater than 0")
         self.__width = width
         self.__height = height
 
@@ -109,7 +118,7 @@ class Rectangle(Shape):
 
 
 """
-Print the area and perimeter of a given shape object.
+Function to print the area and perimeter of a given shape object.
 """
 
 
