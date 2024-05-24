@@ -51,7 +51,7 @@ class Circle(Shape):
             raise TypeError("radius must be an integer or float")
         elif radius < 0:
             raise ValueError("radius must be greater or equal than 0")
-        self.__radius = radius
+        self.radius = radius
 
     def area(self):
         """
@@ -60,7 +60,7 @@ class Circle(Shape):
         Returns:
             float: The area of the circle.
         """
-        return math.pi * (self.__radius ** 2)
+        return math.pi * (self.radius ** 2)
 
     def perimeter(self):
         """
@@ -69,7 +69,7 @@ class Circle(Shape):
         Returns:
             float: The perimeter of the circle.
         """
-        return math.pi * (self.__radius * 2)
+        return math.pi * (self.radius * 2)
 
 
 """
@@ -95,8 +95,8 @@ class Rectangle(Shape):
             raise TypeError("width and height must be integers or floats")
         elif width < 0 or height < 0:
             raise ValueError("width and height must be greater or equal than 0")
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def area(self):
         """
@@ -105,7 +105,7 @@ class Rectangle(Shape):
         Returns:
             float: The area of the rectangle.
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """
@@ -114,7 +114,7 @@ class Rectangle(Shape):
         Returns:
             float: The perimeter of the rectangle.
         """
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
 
 """
