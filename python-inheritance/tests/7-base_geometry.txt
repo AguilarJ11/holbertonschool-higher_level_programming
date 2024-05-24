@@ -20,3 +20,4 @@ TypeError: grados must be greater than 0
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("numero", 10)
+True
