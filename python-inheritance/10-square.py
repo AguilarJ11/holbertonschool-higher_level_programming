@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-Rectangle = __import__('8-rectangle').Rectangle
+"""
+This module contains the definition of the Square Subclass.
+"""
 
-"""
-This module contains the definition of the Rectangle Subclass.
-"""
+Rectangle = __import__('8-rectangle').Rectangle
 
 
 class Square(Rectangle):
