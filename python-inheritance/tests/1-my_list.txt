@@ -23,3 +23,7 @@
 >>> lali.append(2)
 >>> lali.print_sorted()
 [1, 2, 3, 4]
+
+>>> lali = MyList([1, 2, 3, 4])
+>>> print(str(lali))
+[1, 2, 3, 4]
