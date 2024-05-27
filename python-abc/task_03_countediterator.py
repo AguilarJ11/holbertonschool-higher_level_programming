@@ -43,7 +43,7 @@ class CountedIterator:
             StopIteration: If the iterator is exhausted.
         """
         if self.iter_count < self.iter_len:
-            next(self.iterator)
             self.iter_count += 1
+            return next(self.iterator)
         else:
             raise StopIteration
