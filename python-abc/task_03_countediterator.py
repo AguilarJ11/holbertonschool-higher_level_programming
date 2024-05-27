@@ -26,6 +26,15 @@ class CountedIterator:
         self.iter_count = 0
         self.iter_len = len(iter_obj)
 
+    def get_count(self):
+        """
+        Returns the number of items iterated over.
+
+        Returns:
+            int: The count of iterated items.
+        """
+        return self.iter_count
+
     def __next__(self):
         """
         Returns the next item and increments the count.
@@ -38,12 +47,3 @@ class CountedIterator:
             self.iter_count += 1
         else:
             raise StopIteration
-
-    def get_count(self):
-        """
-        Returns the number of items iterated over.
-
-        Returns:
-            int: The count of iterated items.
-        """
-        return self.iter_count
