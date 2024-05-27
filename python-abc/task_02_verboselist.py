@@ -53,8 +53,9 @@ class VerboseList(list):
             The removed item.
         """
         if value is None:
-            super().pop()
             print(f"Popped [{self[-1]}] from the list.")
+            super().pop()
+            
         else:
-            super().pop(value)
             print(f"Popped [{self[value]}] from the list.")
+            super().pop(value)
