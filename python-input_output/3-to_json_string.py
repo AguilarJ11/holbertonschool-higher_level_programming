@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import json
+
 
 """
 Representation of an objetc in JSON format
 """
+import json
 
 
 def to_json_string(my_obj):
