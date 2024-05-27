@@ -13,6 +13,6 @@ def read_file(filename=""):
     Args:
         filename (str): The path to the file to be read.
     """
-    with open(filename, encoding="utf-8") as myFile:
-        for line in myFile:
+    with open(filename, encoding="utf-8") as f:
+        for line in f:
             print(line, end='')
