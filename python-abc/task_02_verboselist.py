@@ -54,7 +54,7 @@ class VerboseList(list):
         """
         if value is None:
             print(f"Popped [{self[-1]}] from the list.")
-            super().pop()
+            super().pop(value)
             
         else:
             print(f"Popped [{self[value]}] from the list.")
