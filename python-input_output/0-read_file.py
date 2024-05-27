@@ -14,4 +14,5 @@ def read_file(filename=""):
         filename (str): The path to the file to be read.
     """
     with open(filename, encoding="utf-8") as myFile:
-        print(myFile.read())
+        for line in myFile:
+            print(line, end='')
