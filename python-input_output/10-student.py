@@ -33,7 +33,7 @@ class Student:
         attrs_only = {}
 
         if attrs is None:
-            return attrs_only
+            return self.__dict__
 
         for key, value in attrs_dict.items():
             if key in attrs:
