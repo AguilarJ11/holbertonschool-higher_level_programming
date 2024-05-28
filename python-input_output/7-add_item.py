@@ -14,10 +14,12 @@ arg = sys.argv[1:]
 
 add_arg = []
 
-for i in arg:
-    add_arg.append(i)
 try:
     add_arg = load_from_json_file('add_item.json')
+    for i in arg:
+        add_arg.append(i)
     save_to_json_file(add_arg, 'add_item.json')
-except 'missingfile':
+except FileNotFoundError:
+    for i in arg:
+        add_arg.append(i)
     save_to_json_file(add_arg, 'add_item.json')
