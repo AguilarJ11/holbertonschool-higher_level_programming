@@ -2,6 +2,7 @@
 
 """This module provides a class called Student to represent students."""
 
+
 class Student:
     """Represents a student with their first name, last name, and age."""
 
@@ -16,7 +17,7 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-        
+
     def to_json(self):
         """Convert the student object to a JSON-compatible dictionary.
 
