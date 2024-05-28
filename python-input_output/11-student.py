@@ -44,6 +44,6 @@ class Student:
 
         """Updates attributes from JSON data."""
 
-        for key, value in self.__dict__.items():
-            if key in json:
+        for key, value in json.items():
+            if key in self.__dict__:
                 setattr(self, key, value)
