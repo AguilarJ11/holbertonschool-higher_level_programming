@@ -32,6 +32,9 @@ class Student:
         attrs_dict = self.__dict__
         attrs_only = {}
 
+        if attrs is None:
+            return attrs_only
+
         for key, value in attrs_dict.items():
             if key in attrs:
                 attrs_only[key] = value
