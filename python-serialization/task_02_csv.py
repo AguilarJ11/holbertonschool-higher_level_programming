@@ -24,12 +24,9 @@ def convert_csv_to_json(csv_file):
         with open(csv_file, encoding='utf-8') as csvf:
             csv_reader = csv.DictReader(csvf)
             for row in csv_reader:
-                for key, value in row.items():
-                    data[key] = value
-        try:
-            with open("data.json", "w", encoding="utf-8") as jf:
-                json.dump(data, jf)
-        except FileNotFoundError:
-            return False
+                data.append(row)
     except FileNotFoundError:
         return False
+    
+    with open("data.json", "w", encoding="utf-8") as jf:
+        json.dump(data, jf)
