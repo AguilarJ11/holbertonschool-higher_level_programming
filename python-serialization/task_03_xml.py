@@ -2,6 +2,7 @@
 
 import xml.etree.ElementTree as ET
 
+
 def serialize_to_xml(dictionary, filename):
     
     root = ET.Element('data')
@@ -16,3 +17,12 @@ def serialize_to_xml(dictionary, filename):
 
 def deserialize_from_xml(filename):
     
+    cons_dict = {}
+    
+    tree = ET.parse(filename)
+    root = tree.getroot()
+    
+    for child in root:
+        cons_dict[child.tag] = child.text
+    
+    return cons_dict
