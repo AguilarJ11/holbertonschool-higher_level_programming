@@ -27,7 +27,9 @@ class CustomObject:
 
     def display(self):
         """Prints the details of the CustomObject."""
-        print(f"Name: {self.name}\nAge: {self.age}\nIs Student: {self.is_student}")
+
+        print(f"Name: {self.name}\nAge: {self.age}\n\
+            Is Student: {self.is_student}")
 
     def serialize(self, filename):
         """
@@ -41,7 +43,7 @@ class CustomObject:
                 pickle.dump(self, f)
         except (TypeError, FileNotFoundError, pickle.UnpicklingError):
             return None
-        
+
     @classmethod
     def deserialize(cls, filename):
         """
@@ -54,6 +56,7 @@ class CustomObject:
         CustomObject: The deserialized CustomObject,
         None if deserialization fails.
         """
+
         try:
             with open(filename, "rb") as f:
                 return pickle.load(f)
