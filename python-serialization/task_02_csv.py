@@ -18,7 +18,7 @@ def convert_csv_to_json(csv_file):
     Returns:
         bool: True if conversion is successful, False otherwise.
     """
-    data = {}
+    data = []
 
     try:
         with open(csv_file, encoding='utf-8') as csvf:
