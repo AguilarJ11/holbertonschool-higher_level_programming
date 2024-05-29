@@ -1,9 +1,17 @@
 #!/usr/bin/python3
 
+"""
+doc
+"""
+
 import xml.etree.ElementTree as ET
 
 
 def serialize_to_xml(dictionary, filename):
+    
+    """
+    doc
+    """
     
     root = ET.Element('data')
     
