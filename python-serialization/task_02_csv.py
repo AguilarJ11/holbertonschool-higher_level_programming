@@ -30,3 +30,5 @@ def convert_csv_to_json(csv_file):
     
     with open("data.json", "w", encoding="utf-8") as jf:
         json.dump(data, jf)
+
+    return True
