@@ -36,9 +36,12 @@ class CustomObject:
         Parameters:
         filename (str): The name of the file to save the object to.
         """
-        with open(filename, "wb") as f:
-            pickle.dump(self, f)
-
+        try:
+            with open(filename, "wb") as f:
+                pickle.dump(self, f)
+        except pickle.UnpicklingError:
+            return None
+        
     @classmethod
     def deserialize(cls, filename):
         """
@@ -48,7 +51,11 @@ class CustomObject:
         filename (str): The name of the file to load the object from.
 
         Returns:
-        CustomObject: The deserialized CustomObject.
+        CustomObject: The deserialized CustomObject,
+        None if deserialization fails.
         """
-        with open(filename, "rb") as f:
-            return pickle.load(f)
+        try:
+            with open(filename, "rb") as f:
+                return pickle.load(f)
+        except (FileNotFoundError, pickle.UnpicklingError):
+            return None
