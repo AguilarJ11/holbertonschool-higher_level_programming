@@ -32,15 +32,18 @@ def fetch_and_save_posts():
             for key, value in dic.items():
                 if key in {'id', 'title', 'body'}:
                     data_dic[key] = value
-            data_list.append(data_dic)            
+            data_list.append(data_dic)  
+            
+        with open('posts.csv','w', newline='', encoding='utf-8') as f:
+            fieldnames = ['id', 'title', 'body']
+            w = csv.DictWriter(f, fieldnames=fieldnames)
+            w.writeheader()
+
+            for row in data_list:
+                w.writerow(row)          
     else:
         print("Fail to fetch")
     
-    with open('posts.csv','w', newline='', encoding='utf-8') as f:
-        fieldnames = ['id', 'title', 'body']
-        w = csv.DictWriter(f, fieldnames=fieldnames)
-        w.writeheader()
-        for row in data_list:
-            w.writerow(row)
+    
        
 fetch_and_save_posts()
