@@ -16,7 +16,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             yeison = json.dump({"name": "John", "age": 30, "city": "New York"})
-            self.wfile.write(yeison)
+            self.wfile.write(yeison.encode('utf-8'))
 
         elif self.path == '/status':
             self.send_response(200)
@@ -26,10 +26,10 @@ class Handler(http.server.BaseHTTPRequestHandler):
 
         elif self.path == '/info':
             self.send_response(200)
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             yeison = json.dump({"version": "1.0", "description": "A simple API built with http.server"})
-            self.wfile.write(yeison)
+            self.wfile.write(yeison.encode('utf-8'))
 
         else:
             self.send_response(404)
