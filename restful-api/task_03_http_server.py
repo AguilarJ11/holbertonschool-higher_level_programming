@@ -5,26 +5,26 @@ import http.server, socketserver, json
 class Handler(http.server.BaseHTTPRequestHandler):
     
     def do_GET(self):
-        if self.path == '/':
+        if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
 
-        elif self.path == '/data':
+        elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
             yeison = json.dumps({"name": "John", "age": 30, "city": "New York"})
             self.wfile.write(yeison.encode('utf-8'))
 
-        elif self.path == '/status':
+        elif self.path == "/status":
             self.send_response(200)
             self.send_header("Content-type", "text/html")
             self.end_headers()
             self.wfile.write(b"Ok")
 
-        elif self.path == '/info':
+        elif self.path == "/info":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
@@ -39,4 +39,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
 
 with socketserver.TCPServer(("", 8000), Handler) as httpd:
     print("serving at port", 8000)
-    httpd.serve_forever()
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        pass
