@@ -33,12 +33,11 @@ def add_user():
     
     if not username:
         return jsonify({"error": "username is required"}), 400
-    elif username in users.keys():
-        return jsonify({"error": "username already exists"}), 400
-    else:
-         users[username] = data
-         msj_dict = {"message": "User added", "user": data}
-         return jsonify(msj_dict), 201
+    
+    users[username] = data
+    msj_dict = {"message": "User added", "user": data}
+
+    return jsonify(msj_dict), 201
 
 if __name__ == "__main__": 
     app.run(debug=True)
