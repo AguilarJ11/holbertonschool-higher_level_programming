@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import json
 
 app = Flask(__name__)
@@ -26,9 +26,9 @@ def user(username):
     else:
         return jsonify({"error": "User not found"})
 
-@app.route("/add_user/<new_user>", methods=["POST"])
-def add_user(new_user):
-    data = json.loads(new_user)
+@app.route("/add_user", methods=["POST"])
+def add_user():
+    data = request.get_json("username")
     username = data.get("username")
     
     if username in users.keys():
@@ -36,7 +36,7 @@ def add_user(new_user):
     else:
          users[username] = data
          
-         return jsonify({"message": "User added"}, users[username])
+         return jsonify({"message": "User added"}, {"user": data})
 
 if __name__ == "__main__": 
     app.run(debug=True)
