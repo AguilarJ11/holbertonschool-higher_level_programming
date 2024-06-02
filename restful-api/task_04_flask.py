@@ -20,10 +20,9 @@ def status():
 
 @app.route("/user/<username>", methods=["GET"])
 def user(username):
-    if not username:
-        return jsonify({"error": "User not found"}), 404
-    elif username in users.keys():
-        return jsonify(users[username]), 202
+    
+    if username in users.keys():
+        return jsonify(users[username]), 200
     else:
         return jsonify({"error": "User not found"}), 404
 
