@@ -35,9 +35,8 @@ def add_user(new_user):
         return "User name already exists"
     else:
          users[username] = data
-         msj_dic = {"message": "User added",
-                    username: data}
-         return jsonify(msj_dic)
+         
+         return jsonify({"message": "User added"}, users[username])
 
 if __name__ == "__main__": 
     app.run(debug=True)
