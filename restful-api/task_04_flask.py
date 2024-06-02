@@ -32,7 +32,7 @@ def add_user():
     username = data.get("username")
     
     if not username:
-        return jsonify({"error": "username is required"}), 400
+        return jsonify({"error": "Username is required"}), 400
     
     users[username] = data
     msj_dict = {"message": "User added", "user": data}
