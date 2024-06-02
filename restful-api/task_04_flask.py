@@ -18,7 +18,7 @@ def data():
 def status():
     return"OK"
 
-@app.route("/user/<username>", methods=["GET"])
+@app.route("/user/<username>")
 def user(username):
     
     if username in users:
