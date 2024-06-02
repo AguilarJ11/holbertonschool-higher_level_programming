@@ -20,7 +20,9 @@ def status():
 
 @app.route("/user/<username>", methods=["GET"])
 def user(username):
-    if username in users.keys():
+    if not username:
+        return jsonify({"error": "User not found"}), 404
+    elif username in users.keys():
         return jsonify(users[username]), 202
     else:
         return jsonify({"error": "User not found"}), 404
@@ -29,10 +31,11 @@ def user(username):
 def add_user():
     data = request.get_json("username")
     username = data.get("username")
+    
     if not username:
-        return jsonify({"error": "username is required"}), 404
+        return jsonify({"error": "username is required"}), 400
     elif username in users.keys():
-        return jsonify({"error": "username already exists"}), 404
+        return jsonify({"error": "username already exists"}), 400
     else:
          users[username] = data
          msj_dict = {"message": "User added", "user": data}
