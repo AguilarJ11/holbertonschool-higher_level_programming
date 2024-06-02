@@ -5,8 +5,7 @@ import json
 
 app = Flask(__name__)
 
-#users = {"jose":{"name":"Jose", "age": 70, "city": "Montevideo"},
- #            "pepe":{"name":"pepe", "age": 45, "city": "Bs As"},}
+users = {}
 
 @app.route("/")
 def home():
