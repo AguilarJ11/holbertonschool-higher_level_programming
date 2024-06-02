@@ -30,9 +30,9 @@ def add_user():
     data = request.get_json("username")
     username = data.get("username")
     if not username:
-        return jsonify({"error": "username is required"}), 400
+        return jsonify({"error": "username is required"}), 404
     elif username in users.keys():
-        return jsonify({"error": "username already exists"}), 400
+        return jsonify({"error": "username already exists"}), 404
     else:
          users[username] = data
          msj_dict = {"message": "User added", "user": data}
