@@ -24,8 +24,8 @@ users = {
 
 @auth.verify_password
 def verify_password(username, password):
-    user = users.get(username)
-    if user and check_password_hash(user.get("password"), password):
+    if username in users and \
+        check_password_hash(users.get(username).get("password"), password):
         return True
     return False
 
@@ -43,7 +43,7 @@ def auth_error(status):
 
 @app.route("/login", methods=["POST"])
 def login():
-    login_data = request.get_json("user")
+    login_data = request.get_json()
     username = login_data.get("username")
     password = login_data.get("password")
     
