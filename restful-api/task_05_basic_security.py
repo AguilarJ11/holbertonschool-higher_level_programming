@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, abort
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
@@ -17,9 +17,9 @@ jwt = JWTManager(app)
 
 users = {
       "user1": 
-          {"username": "user1", "password": generate_password_hash("pass-user"), "role": "user"},
+          {"username": "user1", "password": generate_password_hash("pass"), "role": "user"},
       "admin1": 
-          {"username": "admin1", "password": generate_password_hash("pass-admin"), "role": "admin"}
+          {"username": "admin1", "password": generate_password_hash("pass"), "role": "admin"}
         }
 
 @auth.verify_password
@@ -33,13 +33,6 @@ def verify_password(username, password):
 @auth.login_required
 def basic_auth():
     return jsonify("Basic Auth: Access Granted"), 200
-
-@auth.error_handler
-def auth_error(status):
-    if status == 401:
-        return jsonify("401 Unauthorized"), 401
-    elif status == 403:
-        return jsonify("403 Forbidden"), 403
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -75,3 +68,5 @@ def handle_unauthorized_error(err):
 @jwt.invalid_token_loader
 def handle_invalid_token_error(err):
     return jsonify({"error": "Invalid token"}), 401
+
+app.run()
