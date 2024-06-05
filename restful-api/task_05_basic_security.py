@@ -32,7 +32,7 @@ def verify_password(username, password):
 @app.route("/basic-protected")
 @auth.login_required
 def basic_auth():
-    return jsonify("Basic Auth: Access Granted"), 200
+    return "Basic Auth: Access Granted", 200
 
 @app.route("/login", methods=["POST"])
 def login():
