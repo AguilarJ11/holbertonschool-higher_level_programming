@@ -8,9 +8,7 @@ import sys
 
 
 def get_all_states():
-    """
-    commentario
-    """
+
     try:
         db = MySQLdb.connect(host='localhost',
                              port=3306,
@@ -18,12 +16,12 @@ def get_all_states():
                              passwd=sys.argv[2],
                              db=sys.argv[3])
         cur = db.cursor()
-        name = sys.argv[4]
+        arg = sys.argv[4]
         query = 'SELECT * \
                     FROM states \
                     WHERE name = %s \
                     ORDER BY id ASC'
-        cur.execute(query, (name,))
+        cur.execute(query, (arg,))
         rows = cur.fetchall()
         for row in rows:
             print(row)
@@ -35,7 +33,4 @@ def get_all_states():
 
 
 if __name__ == '__main__':
-    """
-    comentario interesante
-    """
     get_all_states()
