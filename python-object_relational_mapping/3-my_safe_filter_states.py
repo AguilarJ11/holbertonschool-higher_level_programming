@@ -17,11 +17,12 @@ def get_all_states():
                              db=sys.argv[3])
         cur = db.cursor()
         arg = sys.argv[4]
-        query = 'SELECT * \
-                    FROM states \
-                    WHERE name = %s \
-                    ORDER BY id ASC'
-        cur.execute(query, (arg,))
+        query = """SELECT *
+                    FROM states
+                    WHERE name = '{}'
+                    ORDER BY id ASC
+                    """.format(arg)
+        cur.execute(query)
         rows = cur.fetchall()
         for row in rows:
             print(row)
