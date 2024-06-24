@@ -18,11 +18,11 @@ def get_all_states():
         cur = db.cursor()
         arg = sys.argv[4]
         query = """
-            SELECT *
+                SELECT *
                 FROM states
                 WHERE name = '{}'
                 ORDER BY id ASC
-            """.format(arg)
+                """.format(arg)
         cur.execute(query)
         rows = cur.fetchall()
         for row in rows:
