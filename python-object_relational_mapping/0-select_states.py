@@ -24,5 +24,6 @@ def get_all_states():
     except MySQLdb.Error as e:
         print(e)
 
+
 if __name__ == '__main__':
     get_all_states()
