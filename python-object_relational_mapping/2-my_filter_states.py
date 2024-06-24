@@ -19,7 +19,7 @@ def get_all_states():
         arg = sys.argv[4]
         query = 'SELECT * \
                     FROM states \
-                    WHERE BINARY name = %s \
+                    WHERE name = %s \
                     ORDER BY id ASC'
         cur.execute(query, (arg,))
         rows = cur.fetchall()
