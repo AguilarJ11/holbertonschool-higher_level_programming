@@ -6,7 +6,7 @@ import MySQLdb
 import sys
 
 
-def get_all_cities():
+def cities_from():
 
     try:
         db = MySQLdb.connect(host='localhost',
@@ -21,12 +21,15 @@ def get_all_cities():
                 FROM cities
                 LEFT JOIN states ON cities.state_id = states.id
                 WHERE states.name = %s
-                ORDER BY id ASC
+                ORDER BY states.id ASC
                 """
         cur.execute(query, (state_name,))
         rows = cur.fetchall()
-        for row in rows:
-            print(row)
+        for index, row in enumerate(rows):
+            if index + 1 == len(rows):
+                print(row[0])
+            else:
+                print(f"{row[0]}, ", end="")
 
         cur.close()
         db.close()
@@ -35,4 +38,4 @@ def get_all_cities():
 
 
 if __name__ == '__main__':
-    get_all_cities()
+    cities_from()
