@@ -16,7 +16,7 @@ def get_all_states():
         cur = db.cursor()
         cur.execute("SELECT * \
                     FROM states \
-                    WHERE name LIKE 'N%'\
+                    WHERE name = LIKE 'N%'\
                     ORDER BY id ASC")
         rows = cur.fetchall()
         for row in rows:
