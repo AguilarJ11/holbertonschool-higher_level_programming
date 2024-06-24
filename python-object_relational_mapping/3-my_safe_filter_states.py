@@ -8,7 +8,7 @@ import sys
 
 
 def get_all_states():
-    
+
     try:
         db = MySQLdb.connect(host='localhost',
                              port=3306,
