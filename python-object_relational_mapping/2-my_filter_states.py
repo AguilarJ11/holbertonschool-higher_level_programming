@@ -20,7 +20,7 @@ def get_all_states():
         query = """
             SELECT *
                 FROM states
-                WHERE name = %s
+                WHERE name = '{}'
                 ORDER BY id ASC
             """.format(arg)
         cur.execute(query)
