@@ -20,10 +20,10 @@ def get_all_states():
         query = """
                 SELECT *
                 FROM states
-                WHERE BINARY name = '{}'
+                WHERE BINARY name = %s
                 ORDER BY id ASC
-                """.format(arg)
-        cur.execute(query)
+                """
+        cur.execute(query, (arg,))
         rows = cur.fetchall()
         for row in rows:
             print(row)
