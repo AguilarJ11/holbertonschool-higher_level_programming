@@ -17,12 +17,8 @@ def get_all_states():
                              db=sys.argv[3])
         cur = db.cursor()
         arg = sys.argv[4]
-        query = """
-                SELECT *
-                FROM states
-                WHERE BINARY name = %s
-                ORDER BY id ASC
-                """
+        query = ("SELECT * FROM states " +
+             "WHERE name LIKE BINARY %s ORDER BY id")
         cur.execute(query, (arg,))
         rows = cur.fetchall()
         for row in rows:
