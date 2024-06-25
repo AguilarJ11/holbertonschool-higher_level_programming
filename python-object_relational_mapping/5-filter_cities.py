@@ -27,10 +27,10 @@ def cities_from():
         rows = cur.fetchall()
         for index, row in enumerate(rows):
             if index + 1 == len(rows):
-                print(row[0])
+                print(row[0], end="")
             else:
                 print(f"{row[0]}, ", end="")
-
+        print('\n')
         cur.close()
         db.close()
     except MySQLdb.Error as e:
