@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-script that deletes all State objects with a name
-containing the letter a from the database hbtn_0e_6_usa
+prints all City objects from the database hbtn_0e_14_usa:
 """
 from model_state import Base, State
 from model_city import Base, City
@@ -21,4 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-
+    query = session.query(State, City).order_by(City.id).all()
+    for s, c in query:
+        print(f"{s.name}: {c.id} {c.name}")
+    session.commit()
+    session.close()
