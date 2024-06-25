@@ -30,7 +30,7 @@ def cities_from():
                 print(row[0], end="")
             else:
                 print(f"{row[0]}, ", end="")
-        print('\n')
+        print("")
         cur.close()
         db.close()
     except MySQLdb.Error as e:
