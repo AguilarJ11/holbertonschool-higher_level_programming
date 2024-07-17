@@ -25,7 +25,7 @@ def generate_invitations(template, attendees):
                 if value:
                     new_template = new_template.replace(replace, value)
                 else:
-                    new_template = new_template.replace(replace,"'N/A'")
+                    new_template = new_template.replace(replace,"N/A")
         with open("output_" + str(num) + ".txt", "w") as file:
             file.write(new_template)
         num+=1
