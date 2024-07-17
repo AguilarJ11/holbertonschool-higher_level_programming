@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-from os import abort
-
 
 def generate_invitations(template, attendees):
     """
@@ -9,17 +7,15 @@ def generate_invitations(template, attendees):
     Check if parameters are empty, it one of those are, error message show
     return a file output_x.txt x is the index starting from 1
     """
-    if not isinstance(template, str):
-        print(f"Invalid type {template}")
-        abort()
-    elif not isinstance(attendees, list):
-        print(f"Invalid type {attendees}")
-        abort()
+    if not isinstance(template, str) or not template:
+        return "Template is empty or invalid type, no output files generated."
+    elif not isinstance(attendees, list) or not attendees:
+        return "Attendees is empty or invalid type, no output files generated."
         
     for item in attendees:
         if not isinstance(item, dict):
-            print(f"Invalid type {item}")
-            abort()
+            return "The list is not a list of dictionaries"
+
     num = 1    
     for item in attendees:
         new_template = template
