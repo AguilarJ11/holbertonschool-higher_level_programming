@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
 
@@ -18,8 +19,10 @@ def contact():
 
 @app.route('/items', method=['GET'])
 def contact():
-    data = request.json()
-    return render_template('items.html')
+    with open("items.json", "r") as file:
+        data = json.load(file)
+        items = data['items']
+    return render_template('items.html', items)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
