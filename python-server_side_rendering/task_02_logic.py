@@ -19,9 +19,12 @@ def contact():
 
 @app.route('/items')
 def items():
-    with open("items.json", "r") as file:
+    with open("/home/pebete/Repos/holbertonschool-higher_level_programming/python-server_side_rendering/items.json", "r") as file:
         data = json.load(file)
-    items = data["items"]
+    if data:
+        items = data["items"]
+    else:
+        items = []
     return render_template('items.html', items=items)
 
 if __name__ == '__main__':
