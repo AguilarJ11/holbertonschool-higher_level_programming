@@ -19,7 +19,7 @@ def contact():
 
 @app.route('/items')
 def items():
-    with open("/home/pebete/Repos/holbertonschool-higher_level_programming/python-server_side_rendering/items.json", "r") as file:
+    with open("items.json", "r") as file:
         data = json.load(file)
     if data:
         items = data["items"]
