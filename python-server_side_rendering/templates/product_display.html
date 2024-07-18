@@ -5,6 +5,8 @@
   </head>
   <body>
     <header>{% include "header.html" %}</header>
+    <h1>Product Display</h1>
+    <p>aca los productos</p>
     <table>
       <thead>
         <tr>
@@ -14,11 +16,15 @@
         </tr>
       </thead>
       <tbody>
+        {% if not products %}
+        <p>Wrong source</p>
+        {% else %} {% for Product in products %}
         <tr>
-            <td>{{name}}</td>
-            <td>{{category}}</td>
-            <td>{{price}}</td>
+          <td>{{product.get("name")}}</td>
+          <td>{{product.get("category")}}</td>
+          <td>{{product.get("price")}}</td>
         </tr>
+        {% endfor %} {% endif %}
       </tbody>
     </table>
     <footer>{% include "footer.html" %}</footer>
