@@ -19,7 +19,7 @@ def contact():
 @app.route('/items', method=['GET'])
 def contact():
     data = request.json()
-    return render_template('items.html')
+    return render_template('items.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
