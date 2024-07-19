@@ -33,7 +33,7 @@ def products():
     id = request.args.get("id")
     
     if file_type == "json":
-        with open("/home/pebete/Repos/holbertonschool-higher_level_programming/python-server_side_rendering/products.json", "r") as json_file:
+        with open("products.json", "r") as json_file:
             data = json.load(json_file)
         if id:
             for dictionary in data:
@@ -41,7 +41,7 @@ def products():
                     data = []
                     data.append(dictionary)
     elif file_type == "csv":
-        with open ("/home/pebete/Repos/holbertonschool-higher_level_programming/python-server_side_rendering/products.csv", newline="") as csv_file:
+        with open ("products.csv", newline="") as csv_file:
             data = csv.DictReader(csv_file)
             data = list(data)
         if id:
