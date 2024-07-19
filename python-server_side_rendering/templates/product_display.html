@@ -18,7 +18,8 @@
       <tbody>
         {% if not products %}
         <p>Wrong source</p>
-        {% else %} {% for Product in products %}
+        {% else %} 
+        {% for product in products %}
         <tr>
           <td>{{product.get("name")}}</td>
           <td>{{product.get("category")}}</td>

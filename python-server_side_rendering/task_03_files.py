@@ -29,8 +29,8 @@ def items():
 
 @app.route('/products')
 def products():
-    file_type = request.args("source")
-    id = request.args("id")
+    file_type = request.args.get("source")
+    id = request.args.get("id")
     
     if file_type == "json":
         with open("products.json", "r") as json_file:
@@ -42,16 +42,14 @@ def products():
     elif file_type == "csv":
         with open ("products.csv", newline="") as csv_file:
             data = csv.DictReader(csv_file)
+            data = list(data)
         if id:
-            for col in data:
-                if col["id"] == id:
-                    csv_dict = {"name": col["name"],
-                                "category": col["category"],
-                                "price": col["price"]}
-                    data = csv_dict
+            for row in data:
+                if row["id"] == id:
+                    data = row
     else:
         data = []
-    return render_template('items.html', products=data)
+    return render_template('product_display.html', products=data)
 
 
 if __name__ == '__main__':
