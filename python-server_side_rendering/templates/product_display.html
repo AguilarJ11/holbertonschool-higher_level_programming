@@ -16,16 +16,20 @@
         </tr>
       </thead>
       <tbody>
-        {% if not products %}
-        <p>Wrong source</p>
-        {% else %} 
-        {% for product in products %}
-        <tr>
-          <td>{{product.name}}</td>
-          <td>{{product.category}}</td>
-          <td>{{product.price}}</td>
-        </tr>
-        {% endfor %} {% endif %}
+        {% if products == 1 %}
+        <p>Product not found</p>
+        {% else %}
+          {% if not products %}
+          <p>Wrong source</p>
+          {% else %} 
+          {% for product in products %}
+          <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.price}}</td>
+          </tr>
+          {% endfor %} {% endif %} 
+          {% endif %}
       </tbody>
     </table>
     <footer>{% include "footer.html" %}</footer>
